@@ -1,0 +1,56 @@
+{
+  "athleteId": "ath_001",
+  "ownerUid": "uid_parent_001",
+  "schemaVersion": "1.0.0",
+  "displayName": "Maya Chen",
+  "preferredName": "Maya",
+  "birthYear": 2012,
+  "ageGroup": "pre-teen",
+  "primaryDiscipline": "figure",
+  "disciplines": ["figure", "offIce"],
+  "level": "Preliminary",
+  "homeClub": "North Rink Skating Club",
+  "coaches": [
+    {
+      "uid": "uid_coach_001",
+      "name": "Coach Rivera",
+      "role": "primary coach",
+      "email": "coach@example.com"
+    }
+  ],
+  "goals": ["Improve edge quality", "Prepare for summer test session"],
+  "summary": {
+    "lastTrainingAt": "2026-06-18T20:30:00Z",
+    "lastJournalAt": "2026-06-18T22:00:00Z",
+    "lastAnalysisAt": "2026-06-17T18:30:00Z",
+    "trainingRecordCount": 42,
+    "journalEntryCount": 15,
+    "analysisSessionCount": 6
+  },
+  "access": {
+    "ownerUid": "uid_parent_001",
+    "members": [
+      {
+        "uid": "uid_coach_001",
+        "role": "coach",
+        "permissions": ["read", "comment"],
+        "status": "active"
+      }
+    ]
+  },
+  "status": "active",
+  "visibility": "shared",
+  "externalRefs": {
+    "blazeTraining": {
+      "legacyAthleteId": "bt-athlete-42"
+    }
+  },
+  "extensions": {
+    "blazeTraining": {
+      "preferredTrainingFocus": ["edges", "jumps"]
+    }
+  },
+  "createdAt": "2026-06-01T14:00:00Z",
+  "updatedAt": "2026-06-18T22:00:00Z",
+  "sourceApp": "migration"
+}

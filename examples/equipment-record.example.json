@@ -1,0 +1,39 @@
+{
+  "equipmentId": "eqp_001",
+  "athleteId": "ath_001",
+  "ownerUid": "uid_parent_001",
+  "schemaVersion": "1.0.0",
+  "equipmentType": "boots",
+  "brand": "Example Skate Co",
+  "model": "Elite Junior",
+  "size": "4.5",
+  "serialNumber": "BOOT-EXAMPLE-001",
+  "purchaseDate": "2026-04-12",
+  "firstUsedAt": "2026-04-20T15:00:00Z",
+  "status": "active",
+  "fitNotes": "Right heel needed heat molding after first week.",
+  "maintenance": [
+    {
+      "performedAt": "2026-06-10T16:00:00Z",
+      "type": "blade sharpening",
+      "notes": "Standard sharpening before summer test prep.",
+      "provider": "North Rink Pro Shop"
+    }
+  ],
+  "visibility": "shared",
+  "externalRefs": {
+    "blazeTraining": {
+      "legacyEquipmentId": "gear-13"
+    }
+  },
+  "extensions": {
+    "blazeTraining": {
+      "usedForFocusAreas": ["edges", "program"]
+    }
+  },
+  "createdAt": "2026-04-12T14:00:00Z",
+  "updatedAt": "2026-06-10T16:15:00Z",
+  "createdByUid": "uid_parent_001",
+  "updatedByUid": "uid_parent_001",
+  "sourceApp": "blazeTraining"
+}

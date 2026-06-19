@@ -1,0 +1,53 @@
+{
+  "sessionId": "ana_001",
+  "athleteId": "ath_001",
+  "ownerUid": "uid_parent_001",
+  "schemaVersion": "1.0.0",
+  "analyzedAt": "2026-06-17T18:30:00Z",
+  "timezone": "America/New_York",
+  "analysisType": "video",
+  "discipline": "figure",
+  "skills": ["single axel", "entry edge", "landing position"],
+  "summary": "Axel entry edge is improving. Landing free-leg position needs control.",
+  "findings": [
+    {
+      "label": "Takeoff timing",
+      "description": "The takeoff occurs slightly before the shoulder position is stable.",
+      "severity": "medium",
+      "timestampSeconds": 14.2
+    }
+  ],
+  "metrics": {
+    "attemptsReviewed": 5,
+    "cleanLandings": 2
+  },
+  "media": [
+    {
+      "mediaId": "media_001",
+      "type": "video",
+      "storagePath": "athletes/ath_001/analysis/ana_001/source.mp4",
+      "thumbnailUrl": "https://example.com/thumb.jpg",
+      "mimeType": "video/mp4",
+      "durationSeconds": 32.4
+    }
+  ],
+  "recommendations": ["Pause before takeoff drill", "Landing hold for 3 seconds after each attempt"],
+  "relatedTrainingRecordId": "trn_001",
+  "visibility": "coachOnly",
+  "status": "reviewed",
+  "externalRefs": {
+    "blazeLab": {
+      "legacySessionId": "lab-video-91"
+    }
+  },
+  "extensions": {
+    "blazeLab": {
+      "analysisModel": "coach-reviewed"
+    }
+  },
+  "createdAt": "2026-06-17T18:35:00Z",
+  "updatedAt": "2026-06-17T19:10:00Z",
+  "createdByUid": "uid_coach_001",
+  "updatedByUid": "uid_coach_001",
+  "sourceApp": "blazeLab"
+}

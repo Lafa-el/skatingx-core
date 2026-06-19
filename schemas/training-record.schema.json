@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.skatingx.dev/training-record.schema.json",
+  "title": "SkatingX Training Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "recordId",
+    "athleteId",
+    "ownerUid",
+    "schemaVersion",
+    "occurredAt",
+    "trainingType",
+    "status",
+    "createdAt",
+    "updatedAt",
+    "sourceApp"
+  ],
+  "properties": {
+    "recordId": { "type": "string", "minLength": 1 },
+    "athleteId": { "type": "string", "minLength": 1 },
+    "ownerUid": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "type": "string", "pattern": "^1\\.0\\.0$" },
+    "occurredAt": { "$ref": "#/$defs/dateTime" },
+    "timezone": { "type": "string", "maxLength": 80 },
+    "trainingType": {
+      "type": "string",
+      "enum": ["onIce", "offIce", "strength", "conditioning", "mobility", "mental", "recovery", "other"]
+    },
+    "focusAreas": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 80 },
+      "uniqueItems": true,
+      "maxItems": 20
+    },
+    "durationMinutes": { "type": "integer", "minimum": 0, "maximum": 1440 },
+    "intensity": { "type": "integer", "minimum": 1, "maximum": 10 },
+    "rpe": { "type": "integer", "minimum": 1, "maximum": 10 },
+    "location": { "type": "string", "maxLength": 160 },
+    "coachName": { "type": "string", "maxLength": 120 },
+    "planned": { "type": "boolean" },
+    "status": { "enum": ["planned", "completed", "skipped", "archived"] },
+    "notes": { "type": "string", "maxLength": 4000 },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["number", "integer", "string", "boolean", "null"]
+      }
+    },
+    "relatedCompetitionId": { "type": "string" },
+    "relatedEquipmentIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "visibility": { "$ref": "#/$defs/visibility" },
+    "externalRefs": { "$ref": "#/$defs/externalRefs" },
+    "extensions": { "$ref": "#/$defs/extensions" },
+    "createdAt": { "$ref": "#/$defs/dateTime" },
+    "updatedAt": { "$ref": "#/$defs/dateTime" },
+    "createdByUid": { "type": "string" },
+    "updatedByUid": { "type": "string" },
+    "archivedAt": { "$ref": "#/$defs/dateTime" },
+    "sourceApp": { "$ref": "#/$defs/sourceApp" }
+  },
+  "$defs": {
+    "dateTime": { "type": "string", "format": "date-time" },
+    "visibility": { "type": "string", "enum": ["private", "shared", "coachOnly", "team"] },
+    "sourceApp": {
+      "type": "string",
+      "enum": ["skatingxCore", "blazeTraining", "blazeJournal", "blazeLab", "blazeAnalysis", "skatingxPlatform", "migration"]
+    },
+    "externalRefs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": { "type": ["string", "number", "boolean", "null"] }
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }
+}

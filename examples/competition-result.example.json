@@ -1,0 +1,42 @@
+{
+  "competitionId": "cmp_001",
+  "athleteId": "ath_001",
+  "ownerUid": "uid_parent_001",
+  "schemaVersion": "1.0.0",
+  "eventName": "Summer Skills Classic",
+  "eventDate": "2026-07-12T14:00:00Z",
+  "timezone": "America/New_York",
+  "competitionType": "competition",
+  "discipline": "figure",
+  "level": "Preliminary",
+  "location": "North Rink",
+  "program": "Free Skate",
+  "placement": 3,
+  "fieldSize": 12,
+  "score": 31.48,
+  "scoreBreakdown": {
+    "technical": 16.2,
+    "presentation": 15.28
+  },
+  "outcome": "Personal best score and podium finish.",
+  "notes": "Good recovery after opening jump mistake.",
+  "relatedTrainingRecordIds": ["trn_001"],
+  "relatedAnalysisSessionIds": ["ana_001"],
+  "visibility": "shared",
+  "status": "completed",
+  "externalRefs": {
+    "blazeTraining": {
+      "legacyCompetitionId": "event-2026-summer"
+    }
+  },
+  "extensions": {
+    "blazeTraining": {
+      "goalCompleted": true
+    }
+  },
+  "createdAt": "2026-07-12T20:00:00Z",
+  "updatedAt": "2026-07-12T20:10:00Z",
+  "createdByUid": "uid_parent_001",
+  "updatedByUid": "uid_parent_001",
+  "sourceApp": "blazeTraining"
+}

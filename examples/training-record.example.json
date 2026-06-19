@@ -1,0 +1,39 @@
+{
+  "recordId": "trn_001",
+  "athleteId": "ath_001",
+  "ownerUid": "uid_parent_001",
+  "schemaVersion": "1.0.0",
+  "occurredAt": "2026-06-18T20:30:00Z",
+  "timezone": "America/New_York",
+  "trainingType": "onIce",
+  "focusAreas": ["edges", "single axel", "program run-through"],
+  "durationMinutes": 75,
+  "intensity": 7,
+  "rpe": 6,
+  "location": "North Rink",
+  "coachName": "Coach Rivera",
+  "planned": true,
+  "status": "completed",
+  "notes": "Strong edge control. Axel takeoff timing needs more consistency.",
+  "metrics": {
+    "completedJumps": 18,
+    "cleanProgramRuns": 1
+  },
+  "relatedEquipmentIds": ["eqp_001"],
+  "visibility": "shared",
+  "externalRefs": {
+    "blazeTraining": {
+      "legacyRecordId": "session-2026-06-18"
+    }
+  },
+  "extensions": {
+    "blazeTraining": {
+      "dailyTaskIds": ["task_edges_01", "task_axel_02"]
+    }
+  },
+  "createdAt": "2026-06-18T21:45:00Z",
+  "updatedAt": "2026-06-18T21:45:00Z",
+  "createdByUid": "uid_parent_001",
+  "updatedByUid": "uid_parent_001",
+  "sourceApp": "blazeTraining"
+}

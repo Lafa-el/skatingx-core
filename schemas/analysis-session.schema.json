@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.skatingx.dev/analysis-session.schema.json",
+  "title": "SkatingX Analysis Session",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sessionId",
+    "athleteId",
+    "ownerUid",
+    "schemaVersion",
+    "analyzedAt",
+    "analysisType",
+    "status",
+    "createdAt",
+    "updatedAt",
+    "sourceApp"
+  ],
+  "properties": {
+    "sessionId": { "type": "string", "minLength": 1 },
+    "athleteId": { "type": "string", "minLength": 1 },
+    "ownerUid": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "type": "string", "pattern": "^1\\.0\\.0$" },
+    "analyzedAt": { "$ref": "#/$defs/dateTime" },
+    "timezone": { "type": "string", "maxLength": 80 },
+    "analysisType": {
+      "type": "string",
+      "enum": ["video", "sensor", "coachReview", "technicalScore", "comparison", "other"]
+    },
+    "discipline": {
+      "type": "string",
+      "enum": ["figure", "hockey", "speed", "synchro", "recreational", "offIce", "other"]
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 100 },
+      "uniqueItems": true,
+      "maxItems": 30
+    },
+    "summary": { "type": "string", "maxLength": 4000 },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "description"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "description": { "type": "string", "minLength": 1, "maxLength": 2000 },
+          "severity": { "enum": ["info", "low", "medium", "high"] },
+          "timestampSeconds": { "type": "number", "minimum": 0 }
+        }
+      },
+      "maxItems": 100
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["number", "integer", "string", "boolean", "null"]
+      }
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mediaId", "type"],
+        "properties": {
+          "mediaId": { "type": "string", "minLength": 1 },
+          "type": { "enum": ["video", "image", "audio", "document", "data"] },
+          "storagePath": { "type": "string" },
+          "downloadUrl": { "type": "string", "format": "uri" },
+          "thumbnailUrl": { "type": "string", "format": "uri" },
+          "mimeType": { "type": "string" },
+          "durationSeconds": { "type": "number", "minimum": 0 }
+        }
+      },
+      "maxItems": 50
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 1000 },
+      "maxItems": 50
+    },
+    "relatedTrainingRecordId": { "type": "string" },
+    "relatedCompetitionId": { "type": "string" },
+    "visibility": { "$ref": "#/$defs/visibility" },
+    "status": { "enum": ["draft", "reviewed", "shared", "archived"] },
+    "externalRefs": { "$ref": "#/$defs/externalRefs" },
+    "extensions": { "$ref": "#/$defs/extensions" },
+    "createdAt": { "$ref": "#/$defs/dateTime" },
+    "updatedAt": { "$ref": "#/$defs/dateTime" },
+    "createdByUid": { "type": "string" },
+    "updatedByUid": { "type": "string" },
+    "archivedAt": { "$ref": "#/$defs/dateTime" },
+    "sourceApp": { "$ref": "#/$defs/sourceApp" }
+  },
+  "$defs": {
+    "dateTime": { "type": "string", "format": "date-time" },
+    "visibility": { "type": "string", "enum": ["private", "shared", "coachOnly", "team"] },
+    "sourceApp": {
+      "type": "string",
+      "enum": ["skatingxCore", "blazeTraining", "blazeJournal", "blazeLab", "blazeAnalysis", "skatingxPlatform", "migration"]
+    },
+    "externalRefs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": { "type": ["string", "number", "boolean", "null"] }
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  }
+}
